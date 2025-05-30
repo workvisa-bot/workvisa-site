@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Работа в Польше | Work in Poland</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f7f7;
+      color: #333;
+    }
+    header {
+      background-color: #004aad;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    main {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    section {
+      margin-bottom: 30px;
+    }
+    h1, h2 {
+      color: #004aad;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    form input, form textarea, form select {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    form button {
+      background-color: #004aad;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .lang-switch {
+      text-align: right;
+      margin-bottom: 10px;
+    }
+    .contact {
+      background-color: #eaf0ff;
+      padding: 15px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="title">Работа в Польше / Work in Poland</h1>
+    <div class="lang-switch">
+      <button onclick="switchLang('ru')">RU</button>
+      <button onclick="switchLang('en')">EN</button>
+    </div>
+  </header>
+  <main>
+    <section id="intro">
+      <h2>Официальные приглашения на работу</h2>
+      <p>Для курьеров, водителей и работников складов. Поможем с приглашением, чтобы вы могли получить визу и поехать работать в Польшу.</p>
+    </section>
+    <section id="benefits">
+      <h2>Что вы получаете:</h2>
+      <ul>
+        <li>✅ Официальное приглашение на работу</li>
+        <li>✅ Быстрое оформление — от 3 до 5 рабочих дней</li>
+        <li>✅ Поддержка на всех этапах</li>
+        <li>✅ Вакансии: Bolt, Uber, Glovo, склады</li>
+      </ul>
+    </section>
+    <section id="steps">
+      <h2>Как это работает:</h2>
+      <ol>
+        <li>Заполняете заявку</li>
+        <li>Связываемся и уточняем детали</li>
+        <li>Получаете приглашение и подаётесь на визу</li>
+        <li>Приезжаете и начинаете работать</li>
+      </ol>
+    </section>
+    <section class="contact">
+      <p>📩 Почта: <a href="mailto:workvisa.unit@gmail.com">workvisa.unit@gmail.com</a><br>
+         💬 Telegram: <a href="https://t.me/workvisa_unit" target="_blank">@workvisa_unit</a></p>
+    </section>
+    <section>
+      <h2>Оставьте заявку</h2>
+      <form action="https://formspree.io/f/mldnrjvp" method="POST">
+        <input type="text" name="name" placeholder="Имя / Name" required>
+        <input type="text" name="citizenship" placeholder="Гражданство / Citizenship" required>
+        <input type="text" name="location" placeholder="В какой стране вы сейчас? / Current location" required>
+        <input type="text" name="contact" placeholder="Телефон / Telegram" required>
+        <select name="job">
+          <option value="courier">Курьер / Courier</option>
+          <option value="driver">Водитель / Driver</option>
+          <option value="warehouse">Склад / Warehouse</option>
+          <option value="any">Любая работа / Any</option>
+        </select>
+        <textarea name="about" placeholder="Расскажите о себе / Tell us about yourself"></textarea>
+        <button type="submit">Отправить / Submit</button>
+      </form>
+    </section>
+  </main>
+  <script>
+    const texts = {
+      ru: {
+        title: 'Работа в Польше / Work in Poland',
+        intro: 'Для курьеров, водителей и работников складов. Поможем с приглашением, чтобы вы могли получить визу и поехать работать в Польшу.',
+        benefits: ['✅ Официальное приглашение на работу','✅ Быстрое оформление — от 3 до 5 рабочих дней','✅ Поддержка на всех этапах','✅ Вакансии: Bolt, Uber, Glovo, склады'],
+        steps: ['Заполняете заявку','Связываемся и уточняем детали','Получаете приглашение и подаётесь на визу','Приезжаете и начинаете работать']
+      },
+      en: {
+        title: 'Work in Poland – with Official Invitation',
+        intro: 'For couriers, drivers, and warehouse workers. We help with the invitation so you can apply for a visa and start working in Poland.',
+        benefits: ['✅ Official work invitation','✅ Fast processing – 3 to 5 business days','✅ Full support','✅ Jobs: Bolt, Uber, Glovo, warehouses'],
+        steps: ['Fill in the form','We contact you to confirm details','You receive the invitation and apply for a visa','You arrive and start working']
+      }
+    };
+
+    function switchLang(lang) {
+      document.getElementById('title').textContent = texts[lang].title;
+      document.querySelector('#intro p').textContent = texts[lang].intro;
+
+      const benefitsList = document.querySelector('#benefits ul');
+      benefitsList.innerHTML = '';
+      texts[lang].benefits.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        benefitsList.appendChild(li);
+      });
+
+      const stepsList = document.querySelector('#steps ol');
+      stepsList.innerHTML = '';
+      texts[lang].steps.forEach(step => {
+        const li = document.createElement('li');
+        li.textContent = step;
+        stepsList.appendChild(li);
+      });
+    }
+  </script>
+</body>
+</html>
