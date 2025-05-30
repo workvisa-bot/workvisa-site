@@ -1,156 +1,65 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Работа в Польше | Work in Poland</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WorkVisaUnit</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f7f7f7;
-      color: #333;
-    }
-    header {
-      background-color: #004aad;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    main {
-      padding: 20px;
-      max-width: 800px;
-      margin: auto;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    section {
-      margin-bottom: 30px;
-    }
-    h1, h2 {
-      color: #004aad;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    form input, form textarea, form select {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    form button {
-      background-color: #004aad;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-    .lang-switch {
-      text-align: right;
-      margin-bottom: 10px;
-    }
-    .contact {
-      background-color: #eaf0ff;
-      padding: 15px;
-      border-radius: 5px;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+    body { background: #f8f9fc; color: #333; line-height: 1.6; }
+    header { background: #1a4d8f; color: white; padding: 20px 0; text-align: center; }
+    header h1 { font-size: 2em; }
+    nav { margin-top: 10px; }
+    nav button { background: white; color: #1a4d8f; border: none; padding: 8px 12px; cursor: pointer; margin: 0 5px; border-radius: 4px; }
+    .container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+    .section { margin-bottom: 40px; }
+    .section h2 { color: #1a4d8f; margin-bottom: 10px; }
+    form input, form textarea { width: 100%; padding: 10px; margin-top: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px; }
+    form button { background: #1a4d8f; color: white; border: none; padding: 12px 20px; border-radius: 5px; cursor: pointer; }
+    footer { background: #e1e6f0; padding: 20px; text-align: center; font-size: 0.9em; color: #555; }
+    .lang-ru, .lang-en { display: none; }
+    .visible { display: block; }
   </style>
+  <script>
+    function switchLang(lang) {
+      document.querySelector('.lang-ru').classList.remove('visible');
+      document.querySelector('.lang-en').classList.remove('visible');
+      document.querySelector('.lang-' + lang).classList.add('visible');
+    }
+  </script>
 </head>
 <body>
   <header>
-    <h1 id="title">Работа в Польше / Work in Poland</h1>
-    <div class="lang-switch">
-      <button onclick="switchLang('ru')">RU</button>
-      <button onclick="switchLang('en')">EN</button>
-    </div>
+    <h1>WorkVisaUnit</h1>
+    <nav>
+      <button onclick="switchLang('ru')">Русский</button>
+      <button onclick="switchLang('en')">English</button>
+    </nav>
   </header>
-  <main>
-    <section id="intro">
-      <h2>Официальные приглашения на работу</h2>
-      <p>Для курьеров, водителей и работников складов. Поможем с приглашением, чтобы вы могли получить визу и поехать работать в Польшу.</p>
+  <main class="container">
+    <section class="section lang-ru visible">
+      <h2>Работа в Польше</h2>
+      <p>Мы помогаем оформить рабочие визы и найти работу в сфере доставки и такси.</p>
+      <p>Официальные приглашения от польской компании для оформления визы.</p>
     </section>
-    <section id="benefits">
-      <h2>Что вы получаете:</h2>
-      <ul>
-        <li>✅ Официальное приглашение на работу</li>
-        <li>✅ Быстрое оформление — от 3 до 5 рабочих дней</li>
-        <li>✅ Поддержка на всех этапах</li>
-        <li>✅ Вакансии: Bolt, Uber, Glovo, склады</li>
-      </ul>
+    <section class="section lang-en">
+      <h2>Work in Poland</h2>
+      <p>We help with work visa processing and job placement in delivery and taxi sectors.</p>
+      <p>Official invitations from a Polish company to apply for a visa.</p>
     </section>
-    <section id="steps">
-      <h2>Как это работает:</h2>
-      <ol>
-        <li>Заполняете заявку</li>
-        <li>Связываемся и уточняем детали</li>
-        <li>Получаете приглашение и подаётесь на визу</li>
-        <li>Приезжаете и начинаете работать</li>
-      </ol>
-    </section>
-    <section class="contact">
-      <p>📩 Почта: <a href="mailto:workvisa.unit@gmail.com">workvisa.unit@gmail.com</a><br>
-         💬 Telegram: <a href="https://t.me/workvisa_unit" target="_blank">@workvisa_unit</a></p>
-    </section>
-    <section>
-      <h2>Оставьте заявку</h2>
+    <section class="section">
+      <h2>Оставить заявку / Submit Request</h2>
       <form action="https://formspree.io/f/mldnrjvp" method="POST">
-        <input type="text" name="name" placeholder="Имя / Name" required>
-        <input type="text" name="citizenship" placeholder="Гражданство / Citizenship" required>
-        <input type="text" name="location" placeholder="В какой стране вы сейчас? / Current location" required>
-        <input type="text" name="contact" placeholder="Телефон / Telegram" required>
-        <select name="job">
-          <option value="courier">Курьер / Courier</option>
-          <option value="driver">Водитель / Driver</option>
-          <option value="warehouse">Склад / Warehouse</option>
-          <option value="any">Любая работа / Any</option>
-        </select>
-        <textarea name="about" placeholder="Расскажите о себе / Tell us about yourself"></textarea>
+        <input type="text" name="name" placeholder="Ваше имя / Your Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="message" rows="4" placeholder="Сообщение / Message"></textarea>
         <button type="submit">Отправить / Submit</button>
       </form>
     </section>
   </main>
-  <script>
-    const texts = {
-      ru: {
-        title: 'Работа в Польше / Work in Poland',
-        intro: 'Для курьеров, водителей и работников складов. Поможем с приглашением, чтобы вы могли получить визу и поехать работать в Польшу.',
-        benefits: ['✅ Официальное приглашение на работу','✅ Быстрое оформление — от 3 до 5 рабочих дней','✅ Поддержка на всех этапах','✅ Вакансии: Bolt, Uber, Glovo, склады'],
-        steps: ['Заполняете заявку','Связываемся и уточняем детали','Получаете приглашение и подаётесь на визу','Приезжаете и начинаете работать']
-      },
-      en: {
-        title: 'Work in Poland – with Official Invitation',
-        intro: 'For couriers, drivers, and warehouse workers. We help with the invitation so you can apply for a visa and start working in Poland.',
-        benefits: ['✅ Official work invitation','✅ Fast processing – 3 to 5 business days','✅ Full support','✅ Jobs: Bolt, Uber, Glovo, warehouses'],
-        steps: ['Fill in the form','We contact you to confirm details','You receive the invitation and apply for a visa','You arrive and start working']
-      }
-    };
-
-    function switchLang(lang) {
-      document.getElementById('title').textContent = texts[lang].title;
-      document.querySelector('#intro p').textContent = texts[lang].intro;
-
-      const benefitsList = document.querySelector('#benefits ul');
-      benefitsList.innerHTML = '';
-      texts[lang].benefits.forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = item;
-        benefitsList.appendChild(li);
-      });
-
-      const stepsList = document.querySelector('#steps ol');
-      stepsList.innerHTML = '';
-      texts[lang].steps.forEach(step => {
-        const li = document.createElement('li');
-        li.textContent = step;
-        stepsList.appendChild(li);
-      });
-    }
-  </script>
+  <footer>
+    <p>Email: workvisa.unit@gmail.com | Telegram: @workvisa_unit</p>
+  </footer>
 </body>
 </html>
