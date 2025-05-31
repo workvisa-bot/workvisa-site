@@ -9,7 +9,8 @@
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
     body { background: #f8f9fc; color: #333; line-height: 1.6; }
     header { background: #1a4d8f; color: white; padding: 20px 0; text-align: center; }
-    header h1 { font-size: 2em; }
+    header h1 { font-size: 2em; margin-bottom: 10px; }
+    header img { width: 60px; height: auto; margin-bottom: 10px; }
     nav { margin-top: 10px; }
     nav button { background: white; color: #1a4d8f; border: none; padding: 8px 12px; cursor: pointer; margin: 0 5px; border-radius: 4px; }
     .container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
@@ -31,6 +32,7 @@
 </head>
 <body>
   <header>
+    <img src="logo.png" alt="WorkVisaUnit Logo" />
     <h1>WorkVisaUnit</h1>
     <nav>
       <button onclick="switchLang('ru')">Русский</button>
@@ -59,7 +61,10 @@
     </section>
   </main>
   <footer>
-    <p>Email: workvisa.unit@gmail.com | Telegram: @workvisa_unit</p>
+    <p>
+      Email: <a href="mailto:workvisa.unit@gmail.com">workvisa.unit@gmail.com</a><br />
+      Telegram: <a href="https://t.me/workvisa_unit" target="_blank">@workvisa_unit</a>
+    </p>
   </footer>
 </body>
 </html>
