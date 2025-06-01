@@ -4,67 +4,198 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WorkVisaUnit</title>
+
+  <!-- Favicon SVG -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231a4d8f'/><text x='50%25' y='58%25' font-family='Inter, sans-serif' font-size='48' text-anchor='middle' fill='white' font-weight='700'>WVU</text></svg>">
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
-    body { background: #f8f9fc; color: #333; line-height: 1.6; }
-    header { background: #1a4d8f; color: white; padding: 20px 0; text-align: center; }
-    header h1 { font-size: 2em; margin-bottom: 10px; }
-    header img { width: 60px; height: auto; margin-bottom: 10px; }
-    nav { margin-top: 10px; }
-    nav button { background: white; color: #1a4d8f; border: none; padding: 8px 12px; cursor: pointer; margin: 0 5px; border-radius: 4px; }
-    .container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
-    .section { margin-bottom: 40px; }
-    .section h2 { color: #1a4d8f; margin-bottom: 10px; }
-    form input, form textarea { width: 100%; padding: 10px; margin-top: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px; }
-    form button { background: #1a4d8f; color: white; border: none; padding: 12px 20px; border-radius: 5px; cursor: pointer; }
-    footer { background: #e1e6f0; padding: 20px; text-align: center; font-size: 0.9em; color: #555; }
+    body { background: #f0f2f5; color: #222; line-height: 1.6; }
+
+    header {
+      background: #1a4d8f;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 2em;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav button {
+      background: white;
+      color: #1a4d8f;
+      border: none;
+      padding: 8px 14px;
+      margin: 0 5px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    nav button:hover {
+      background: #d4e1f4;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .section {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+
+    .section.visible-animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section h2 {
+      color: #1a4d8f;
+      margin-bottom: 15px;
+      font-size: 1.5em;
+    }
+
+    .section p {
+      margin-bottom: 10px;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1em;
+    }
+
+    form button {
+      background: #1a4d8f;
+      color: white;
+      border: none;
+      padding: 14px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background 0.3s;
+    }
+
+    form button:hover {
+      background: #153e77;
+    }
+
+    footer {
+      background: #e1e6f0;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #1a4d8f;
+      text-decoration: none;
+    }
+
     .lang-ru, .lang-en { display: none; }
     .visible { display: block; }
-  </style>
-  <script>
-    function switchLang(lang) {
-      document.querySelector('.lang-ru').classList.remove('visible');
-      document.querySelector('.lang-en').classList.remove('visible');
-      document.querySelector('.lang-' + lang).classList.add('visible');
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.5em; }
+      .section { padding: 20px; }
+      form button { width: 100%; }
     }
-  </script>
+  </style>
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="WorkVisaUnit Logo" />
+    <div style="margin-bottom: 10px;">
+      <!-- SVG логотип WVU -->
+      <svg width="60" height="60" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100" height="100" rx="20" fill="#1a4d8f"/>
+        <text x="50%" y="58%" text-anchor="middle" dominant-baseline="middle"
+              font-family="Inter, sans-serif" font-size="36" font-weight="700" fill="white">WVU</text>
+      </svg>
+    </div>
     <h1>WorkVisaUnit</h1>
     <nav>
       <button onclick="switchLang('ru')">Русский</button>
       <button onclick="switchLang('en')">English</button>
     </nav>
   </header>
+
   <main class="container">
     <section class="section lang-ru visible">
       <h2>Работа в Польше</h2>
       <p>Мы помогаем оформить рабочие визы и найти работу в сфере доставки и такси.</p>
       <p>Официальные приглашения от польской компании для оформления визы.</p>
     </section>
+
     <section class="section lang-en">
       <h2>Work in Poland</h2>
       <p>We help with work visa processing and job placement in delivery and taxi sectors.</p>
       <p>Official invitations from a Polish company to apply for a visa.</p>
     </section>
+
     <section class="section">
       <h2>Оставить заявку / Submit Request</h2>
       <form action="https://formspree.io/f/mldnrjvp" method="POST">
-        <input type="text" name="name" placeholder="Ваше имя / Your Name" required>
-        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="name" placeholder="Ваше имя / Your Name" required />
+        <input type="email" name="email" placeholder="Email" required />
         <textarea name="message" rows="4" placeholder="Сообщение / Message"></textarea>
         <button type="submit">Отправить / Submit</button>
       </form>
     </section>
   </main>
+
   <footer>
     <p>
       Email: <a href="mailto:workvisa.unit@gmail.com">workvisa.unit@gmail.com</a><br />
       Telegram: <a href="https://t.me/workvisa_unit" target="_blank">@workvisa_unit</a>
     </p>
   </footer>
+
+  <!-- Языковой переключатель + анимация -->
+  <script>
+    function switchLang(lang) {
+      document.querySelector('.lang-ru').classList.remove('visible');
+      document.querySelector('.lang-en').classList.remove('visible');
+      document.querySelector('.lang-' + lang).classList.add('visible');
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible-animate');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.section').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>
