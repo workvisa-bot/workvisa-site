@@ -111,8 +111,7 @@
   <div id="particles-js"></div>
 
   <div class="navbar">
-    <a onclick="toggleLanguage()" lang="ru">EN</a>
-    <a onclick="toggleLanguage()" lang="en" style="display: none;">RU</a>
+    <a id="langToggle" onclick="toggleLanguage()">EN</a>
     <a onclick="toggleDetails()" lang="ru">Подробнее</a>
     <a onclick="toggleDetails()" lang="en" style="display: none;">Details</a>
     <a onclick="toggleContact()" lang="ru">Контакт</a>
@@ -150,22 +149,23 @@
 
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script>
-    if (typeof currentLang === 'undefined') {
-      var currentLang = 'ru';
-    }
+    window.currentLang = window.currentLang || 'ru';
 
     function toggleLanguage() {
       const ruElements = document.querySelectorAll('[lang="ru"]');
       const enElements = document.querySelectorAll('[lang="en"]');
+      const langToggle = document.getElementById("langToggle");
 
       if (currentLang === 'ru') {
         ruElements.forEach(el => el.style.display = 'none');
-        enElements.forEach(el => el.style.display = (el.tagName === 'BUTTON' || el.tagName === 'A' || el.tagName.startsWith('H')) ? 'inline' : '');
+        enElements.forEach(el => el.style.display = '');
         currentLang = 'en';
+        langToggle.innerText = 'RU';
       } else {
         enElements.forEach(el => el.style.display = 'none');
-        ruElements.forEach(el => el.style.display = (el.tagName === 'BUTTON' || el.tagName === 'A' || el.tagName.startsWith('H')) ? 'inline' : '');
+        ruElements.forEach(el => el.style.display = '');
         currentLang = 'ru';
+        langToggle.innerText = 'EN';
       }
     }
 
